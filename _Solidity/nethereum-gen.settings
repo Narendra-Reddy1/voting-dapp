@@ -1,0 +1,7 @@
+{
+    "projectName": "_Solidity",
+    "namespace": "_Solidity.Contracts",
+    "lang": 0,
+    "autoCodeGen": true,
+    "projectPath": "../CSharpAPI/Contracts/"
+}
