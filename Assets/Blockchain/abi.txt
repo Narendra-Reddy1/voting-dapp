@@ -59,6 +59,36 @@
       "type": "function"
     },
     {
+      "inputs": [],
+      "name": "getElectionTiming",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "electionStartTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "electionEndTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "electionResultTime",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Voting.electionTiming",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "internalType": "string",

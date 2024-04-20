@@ -1434,11 +1434,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0d78bf7925fa4498e1800f664ea6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start: 1713289500
+  end: 1713290400
+  result: 1713290460
   abiPath: Assets/Blockchain/abi.txt
   byteCodePath: Assets/Blockchain/bytecode.txt
   gas: 10000440
-  gasPrice: 21000
-  contractAddress: 0x959922be3caee4b8cd9a407cc3ac1c251c2007b1
+  gasPrice: 210000
+  contractAddress: 0x8464135c8f25da09e49bc8782676a84730c318bc
+  candidateList:
+  - id: 4
+    symbol: BJP
+  - id: 2
+    symbol: TDP
+  - id: 3
+    symbol: YSRCP
 --- !u!114 &1552336409
 MonoBehaviour:
   m_ObjectHideFlags: 0

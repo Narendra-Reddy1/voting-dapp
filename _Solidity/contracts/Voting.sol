@@ -33,6 +33,21 @@ contract Voting {
         electionResultTime = _electionResultTime;
     }
 
+    function getElectionTiming() public view returns (electionTiming memory) {
+        return
+            electionTiming(
+                electionStartTime,
+                electionEndTime,
+                electionResultTime
+            );
+    }
+
+    struct electionTiming {
+        uint256 electionStartTime;
+        uint256 electionEndTime;
+        uint256 electionResultTime;
+    }
+
     function addCandidate(
         uint256 id,
         string memory partySymbol
