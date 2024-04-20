@@ -23,11 +23,14 @@ public class GenericPopup : MonoBehaviour
 
 
 
-    public void SetupPopup(PopupType popupType, string message, UnityAction action = null)
+    public void SetupPopup(PopupType popupType, string message, UnityAction action = null, System.Action<Image, TextMeshProUGUI, Button> customSetup = null)
     {
         _actionBtn.onClick.RemoveAllListeners();
         _actionBtn.onClick.AddListener(action != null ? action : () => { gameObject.SetActive(false); });
         _messageTxt.SetText(message);
+        _popupImg.sprite = _imageDict[popupType];
+        customSetup?.Invoke(_popupImg, _messageTxt, _actionBtn);
+
     }
 
 }

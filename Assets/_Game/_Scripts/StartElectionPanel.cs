@@ -42,7 +42,8 @@ public class StartElectionPanel : MonoBehaviour
     }
     private void _OnSubmit()
     {
-        //Trigger loading Screen
+
+        GlobalEventHandler.OnLoadingPanelToggleRequested?.Invoke(true);
         BigInteger startTime = BigInteger.Parse(_startElectionField.text);
         BigInteger endTime = BigInteger.Parse(_endElectionField.text);
         BigInteger resultTime = 0;
@@ -54,36 +55,36 @@ public class StartElectionPanel : MonoBehaviour
         {
             BlockchainStateManager.instance.StartElection(startTime, endTime, resultTime, () =>
             {
-                //CLose loading Screen
+
+                GlobalEventHandler.OnLoadingPanelToggleRequested?.Invoke(false);
                 GenericPopup popup = ScreenManager.instance.ChangeScreen(Window.GenericElectionPopup, ScreenType.Additive).GetComponent<GenericPopup>();
                 popup.SetupPopup(PopupType.Success, "Election Timings Updated Successfully!!!", () =>
                 {
-                    //where to go??
-                    //Voter id Panel*
+                    ScreenManager.instance.ChangeScreen(Window.VoterIdPanel);
                 });
 
             }, (revetMsg) =>
             {
-                //Close LoadingScreen
+                GlobalEventHandler.OnLoadingPanelToggleRequested?.Invoke(false);
                 GenericPopup popup = ScreenManager.instance.ChangeScreen(Window.GenericElectionPopup, ScreenType.Additive).GetComponent<GenericPopup>();
                 popup.SetupPopup(PopupType.Error, "Something Went Wrong!!!");
             });
         }
         else
         {
-            //Close LoadingScreen
+            GlobalEventHandler.OnLoadingPanelToggleRequested?.Invoke(false);
             GenericPopup popup = ScreenManager.instance.ChangeScreen(Window.GenericElectionPopup, ScreenType.Additive).GetComponent<GenericPopup>();
             popup.SetupPopup(PopupType.Error, "Incorrect Timing!!!");
         }
     }
+
     private bool IsElectionTimingIsValid(BigInteger start, BigInteger end, BigInteger result)
     {
         return ((start > 0 && end > 0 && result > 0) && ((start < end) && (end <= result) && (start < result)));
     }
 
-
     private void _OnCancel()
     {
-        //Go back
+        ScreenManager.instance.ChangeScreen(Window.VoterIdPanel);
     }
 }

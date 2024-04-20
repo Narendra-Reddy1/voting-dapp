@@ -15,7 +15,6 @@ public class VoterIdPanel : MonoBehaviour
     private void OnEnable()
     {
         _submitBtn.interactable = false;
-        _errorTxt.gameObject.SetActive(false);
         _voterIdField.onEndEdit.AddListener(_ValidateVoterId);
         _submitBtn.onClick.AddListener(_OnClickSubmit);
     }
@@ -28,16 +27,15 @@ public class VoterIdPanel : MonoBehaviour
     private void _ValidateVoterId(string voterId)
     {
 
-        bool isMatch = Regex.IsMatch(voterId, voterIdPattern);
-        _errorTxt.gameObject.SetActive(false);
-        if (isMatch)
+        _errorTxt.SetText(string.Empty);
+        if (Regex.IsMatch(voterId, voterIdPattern) && _voterIdField.text.Length == Konstants.LENGTH_OF_VOTER_ID)
         {
-            Debug.Log("The input string matches the pattern.");
             _submitBtn.interactable = true;
         }
         else
         {
-            _errorTxt.gameObject.SetActive(true);
+
+            _errorTxt.SetText("Incorrect Voter ID :(");
             _submitBtn.interactable = false;
         }
     }
@@ -45,13 +43,14 @@ public class VoterIdPanel : MonoBehaviour
 
     private async void _OnClickSubmit()
     {
+        GlobalEventHandler.OnLoadingPanelToggleRequested?.Invoke(true);
         bool isVoted = await BlockchainStateManager.instance.IsCandidatedVotedAlready(_voterIdField.text);
         if (isVoted)
         {
-            _errorTxt.gameObject.SetActive(true);
             _errorTxt.SetText("Already Voted !!");
             return;
         }
+        GlobalVariables.voterID = _voterIdField.text;
         ScreenManager.instance.ChangeScreen(Window.CandidateSelectionPanel);
     }
 

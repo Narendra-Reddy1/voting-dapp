@@ -10,6 +10,14 @@ public class LoadingPanelAnimator : MonoBehaviour
     #endregion Variables
 
     #region Unity Methods
+    private void Awake()
+    {
+        GlobalEventHandler.OnLoadingPanelToggleRequested += (value) =>
+        {
+            this.gameObject.SetActive(value);
+        };
+    }
+
     private void OnEnable()
     {
         InvokeRepeating(nameof(_ShowRandomCube), 0, 0.15f);

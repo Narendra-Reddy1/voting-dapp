@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 6512851445331277017}
   - component: {fileID: 6512851445331277016}
   - component: {fileID: 6512851445331277019}
+  - component: {fileID: 4953769110713898903}
   m_Layer: 5
   m_Name: CancelButton
   m_TagString: Untagged
@@ -257,6 +258,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4953769110713898903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6512851445331277021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dc427d7f3fcd34382ead11155f35dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_button: {fileID: 6512851445331277019}
+  m_coolDownTimer: 0.75
 --- !u!1 &6512851445524901908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,8 +1383,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6512851446422353904}
-  - component: {fileID: 6512851446422353919}
-  - component: {fileID: 6512851446422353918}
   - component: {fileID: 6512851446422353916}
   m_Layer: 5
   m_Name: Start_New_Election_Panel
@@ -1401,44 +1414,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6512851446422353919
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6512851446422353907}
-  m_CullTransparentMesh: 1
---- !u!114 &6512851446422353918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6512851446422353907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 0.392}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &6512851446422353916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2146,6 +2121,7 @@ GameObject:
   - component: {fileID: 6512851446809755203}
   - component: {fileID: 6512851446809755202}
   - component: {fileID: 6512851446809755205}
+  - component: {fileID: 1175418775280610969}
   m_Layer: 5
   m_Name: SubmitButton
   m_TagString: Untagged
@@ -2256,6 +2232,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1175418775280610969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6512851446809755207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dc427d7f3fcd34382ead11155f35dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_button: {fileID: 6512851446809755205}
+  m_coolDownTimer: 0.75
 --- !u!1 &6512851447163022183
 GameObject:
   m_ObjectHideFlags: 0

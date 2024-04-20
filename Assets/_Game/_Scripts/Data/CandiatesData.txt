@@ -1,0 +1,21 @@
+{"candidates":
+[
+ {
+  "imageUrl": "https://ipfs.io/ipfs/QmNs1gwXvLZKEvsdYbLsoNPbeMTgSh73m7uXc34pHs8Gis?filename=BJP.png",
+  "id": "0",
+  "partySymbol": "BJP"
+}
+,{
+  "imageUrl": "https://ipfs.io/ipfs/QmY5UkSvxDm93EUYDvJw7ukBJJyyd6vzkEibV16J1Loagn?filename=Congress.png",
+  "id": "1",
+  "partySymbol":"INC"
+},
+{
+  "imageUrl": "https://ipfs.io/ipfs/QmZFFHCp9uJGHdAASdq8uuoU3f7Q6gkEvxdvdCXYEnhrDp?filename=CPI.png",
+  "id": "2",
+  "partySymbol":"CPI" 
+}
+
+]
+  
+}
