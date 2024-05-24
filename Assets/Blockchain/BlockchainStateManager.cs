@@ -17,10 +17,12 @@ using Nethereum.ABI.FunctionEncoding;
 public class BlockchainStateManager : MonoBehaviour
 {
     public static BlockchainStateManager instance { get; private set; }
+
     private VotingService voting;
     public VotingService VotingService => voting;
 
     public const string contractAddress = "0x8464135c8f25da09e49bc8782676a84730c318bc";
+
     private void Awake()
     {
         instance = this;
@@ -71,6 +73,8 @@ public class BlockchainStateManager : MonoBehaviour
             onTransactionReverted?.Invoke(e.RevertMessage);
         }
     }
+
+
     public void GetWinnerInElections()
     {
 
